@@ -72,21 +72,21 @@
   z-index: 0;
 }
 
-.work-button {
+button.MuiButton-root.work-button {
   margin-top: 48px;
   font-weight: 700;
   width: 200px;
-  background-color: #F6D611;
+  background-color: #F6D611 !important;
   border-radius: 16px;
   height: 50px;
-  color: black;
+  color: black !important;
   font-size: 20px;
   transition: background-color 0.3s;
   z-index: 0;
 }
 
-.work-button:hover {
-  background-color: #F6D611;
+button.MuiButton-root.work-button:hover {
+  background-color: #F6D611 !important;
 }
 
 
