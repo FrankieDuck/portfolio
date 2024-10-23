@@ -1,95 +1,101 @@
+'use client'
 import Image from "next/image";
-import styles from "./page.module.css";
+import { useState } from "react";
+import { Box, Button, Typography } from "@mui/material";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { Link as ScrollLink } from 'react-scroll';
+import Contact from "./Components/Contact";
+import AboutMeSection from "./Components/About";
+import PubCrawl from "./Components/PubCrawl"
+import FrenchBot from "./Components/FrenchBot";
+import Header from "./Components/Banner";
+import WineCellar from "./Components/WineCellar";
+import Duck from "./Components/Duck";
+
+
+import ParticlesSlowBackground from './Components/ParticlesSlowBackground';
+
+const theme = createTheme({
+  typography: {
+    fontFamily: "'Oswald', sans-serif",
+    allVariants: {
+      color: '#F6D611',
+    },
+    h1: {
+      fontSize: '200px',
+      fontWeight: 700,
+      letterSpacing: '-2px',
+    },
+    h2: {
+      fontWeight: 500,
+      letterSpacing: '-1px',
+    },
+    h3: {
+      fontSize: '1.5rem', // Example for h3
+      fontWeight: 600,
+      letterSpacing: '-0.5px',
+    },
+    h5: {
+      fontSize: '1rem', // Example for h5
+      fontWeight: 400,
+    },
+  },
+  spacing: 8,
+});
+
 
 export default function Home() {
+  const [duckToggle, setDuckToggle] = useState(false);
+
+  const handleDuckAnimationEnd = () => {
+    setDuckToggle(true);
+  };
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <ThemeProvider theme={theme}>
+      {/* <ParticlesSlowBackground /> */}
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <Box className="flex-container">
+        {!duckToggle ? (
+          <Box className="flex-center" style={{ width: "100%", height: "100vh" }}>
+            <Duck onAnimationEnd={handleDuckAnimationEnd} />
+          </Box>
+        ) : (
+          <>
+            <Box id="home-section" className="home-section">
+              <Typography variant="h1">FRANKIE DUCK</Typography>
+              <Typography variant="h2">FRONT END ENGINEER</Typography>
+              <ScrollLink to="about-section" smooth={true} duration={500}>
+                <Button className="work-button" variant="contained">
+                  WORK
+                </Button>
+              </ScrollLink>
+            </Box>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+            <Box id="about-section" className="about-section">
+              <Header />
+              <Typography variant="h1">About</Typography>
+              <Box className="about-section-inner">
+                <AboutMeSection />
+              </Box>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+              <Typography variant="h1" className="projects-title">Projects</Typography>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
+              <Box id="projects-section" className="projects-section">
+                <Box className="projects-inner">
+                  <WineCellar />
+                  <PubCrawl />
+                  <FrenchBot />
+                </Box>
+              </Box>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+              <Box id="contact-section" className="contact-section">
+                <Contact />
+              </Box>
+            </Box>
+          </>
+        )}
+      </Box>
+    </ThemeProvider>
   );
 }
