@@ -1,5 +1,4 @@
 'use client'
-import Image from "next/image";
 import { useState } from "react";
 import { Box, Button, Typography } from "@mui/material";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -11,8 +10,6 @@ import FrenchBot from "./Components/FrenchBot";
 import Header from "./Components/Banner";
 import WineCellar from "./Components/WineCellar";
 import Duck from "./Components/Duck";
-
-
 import ParticlesSlowBackground from './Components/ParticlesSlowBackground';
 
 const theme = createTheme({
@@ -22,7 +19,7 @@ const theme = createTheme({
       color: '#F6D611',
     },
     h1: {
-      fontSize: '200px',
+      fontSize: '180px',
       fontWeight: 700,
       letterSpacing: '-2px',
     },
@@ -31,12 +28,12 @@ const theme = createTheme({
       letterSpacing: '-1px',
     },
     h3: {
-      fontSize: '1.5rem', // Example for h3
+      fontSize: '1.5rem', 
       fontWeight: 600,
       letterSpacing: '-0.5px',
     },
     h5: {
-      fontSize: '1rem', // Example for h5
+      fontSize: '1rem', 
       fontWeight: 400,
     },
   },
@@ -50,7 +47,7 @@ export default function Home() {
   const handleDuckAnimationEnd = () => {
     setDuckToggle(true);
   };
-
+//
   return (
     <ThemeProvider theme={theme}>
       {/* <ParticlesSlowBackground /> */}

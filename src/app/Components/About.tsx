@@ -25,7 +25,7 @@ export default function AboutMeSection() {
                     alt="Description of image"
                     width={600}
                     height={600}
-                    style={styles.image}
+                    objectFit='cover'
                 />
             </Box>
         </Box>

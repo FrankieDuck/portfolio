@@ -1,7 +1,7 @@
 import { Box, Typography, Button } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import SportsBarIcon from '@mui/icons-material/SportsBar';
-import ImageWineCollection from './ImageWineCollection';
+import ImagePubCollection from './ImagePubCollection';
 
 export default function PubCrawl() {
     return (
@@ -20,11 +20,11 @@ export default function PubCrawl() {
                     <Button variant="contained" color="primary" endIcon={<GitHubIcon />} href='https://github.com/FrankieDuck/Pub-Crawl' target='_blank'>
                         View Code
                     </Button>
-                    <Button variant="contained" color="secondary" endIcon={<SportsBarIcon />}>
+                    <Button variant="contained" color="secondary" endIcon={<SportsBarIcon />} href='https://pub-crawl-delta.vercel.app/' target='_blank'>
                         Live App
                     </Button>
                 </Box>
-                <ImageWineCollection />
+                <ImagePubCollection />
             </Box>
         </Box>
     );
