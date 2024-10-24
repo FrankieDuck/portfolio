@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { Stack, Box, TextField, Typography, Button } from '@mui/material';
 import emailjs from 'emailjs-com';
 
@@ -9,7 +9,7 @@ export default function Contact() {
         message: ''
     });
 
-    const handleChange = (e) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const { id, value } = e.target;
         setFormData((prevData) => ({
             ...prevData,
@@ -17,7 +17,7 @@ export default function Contact() {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         const serviceID = 'service_t6b7czl';
@@ -43,7 +43,7 @@ export default function Contact() {
         <Box sx={{ width: "80%" }}>
             <Stack component="form" spacing={2} onSubmit={handleSubmit}>
                 <Typography variant='h2'>Contact</Typography>
-                <Typography variant="h5">Have a question or want to work together? Leave your details and I'll get back to you as soon as possible.</Typography>
+                <Typography variant="h5">    Have a question or want to work together? Leave your details and I&#39;ll get back to you as soon as possible.</Typography>
                 <TextField
                     id="name"
                     label="Name"
