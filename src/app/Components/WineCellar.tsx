@@ -20,9 +20,6 @@ export default function WineCellar() {
                     <Button variant="contained" color="primary" endIcon={<GitHubIcon />} href='https://github.com/FrankieDuck/wine-cellar' target='_blank'>
                         View Code
                     </Button>
-                    <Button variant="contained" color="secondary" endIcon={<WineBarIcon />} href='https://wine-cellar-two.vercel.app/' target='_blank'>
-                        Live App
-                    </Button>
                 </Box>
                 <ImageWineCollection />
             </Box>
