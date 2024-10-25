@@ -1,6 +1,4 @@
-import Image from 'next/image';
 import { Box, Typography, Button } from '@mui/material';
-import EmojiFlagsIcon from '@mui/icons-material/EmojiFlags';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ImageWineCollection from './ImageWineCollection';
 
@@ -19,11 +17,8 @@ export default function FrenchBot() {
                         This project utilized the Open AI API but also had a stronger focus on following the WCAG guidelines.
                     </Typography>
                     <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, marginBottom: 8 }}>
-                        <Button variant="contained" color="primary" endIcon={<GitHubIcon />} href='https://github.com/FrankieDuck/Pub-Crawl' target='_blank'>
+                        <Button variant="contained" color="primary" endIcon={<GitHubIcon />} href='https://github.com/FrankieDuck/FrenchBot' target='_blank'>
                             View Code
-                        </Button>
-                        <Button variant="contained" color="secondary" endIcon={<EmojiFlagsIcon />}>
-                            Live App
                         </Button>
                     </Box>
                     <ImageWineCollection />

@@ -25,15 +25,16 @@ const theme = createTheme({
     },
     h2: {
       fontWeight: 500,
+      fontSize: '160px',
       letterSpacing: '-1px',
     },
     h3: {
-      fontSize: '1.5rem', 
+      fontSize: '1.5rem',
       fontWeight: 600,
       letterSpacing: '-0.5px',
     },
     h5: {
-      fontSize: '1rem', 
+      fontSize: '1rem',
       fontWeight: 400,
     },
   },
@@ -47,7 +48,7 @@ export default function Home() {
   const handleDuckAnimationEnd = () => {
     setDuckToggle(true);
   };
-//
+  //
   return (
     <ThemeProvider theme={theme}>
       {/* <ParticlesSlowBackground /> */}
@@ -76,14 +77,9 @@ export default function Home() {
                 <AboutMeSection />
               </Box>
 
-              <Typography variant="h1" className="projects-title">Projects</Typography>
-
               <Box id="projects-section" className="projects-section">
-                <Box className="projects-inner">
-                  <WineCellar />
-                  <PubCrawl />
-                  <FrenchBot />
-                </Box>
+                <WineCellar />
+                <PubCrawl />
               </Box>
 
               <Box id="contact-section" className="contact-section">

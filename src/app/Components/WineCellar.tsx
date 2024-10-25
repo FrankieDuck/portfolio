@@ -10,17 +10,17 @@ export default function WineCellar() {
                 <Typography variant="h2" sx={{ marginBottom: 2, }}>
                     Wine Cellar
                 </Typography>
-                <Typography variant="h5" sx={{ marginBottom: 3 }}>
+                <Typography variant="h4" sx={{ marginBottom: 3 }}>
                     A MERN based project. This project focused on learning MongoDB and creating a web-based application that could be adaptive to differsent sets of data.
                 </Typography>
-                <Typography variant="h5" sx={{ marginBottom: 3 }}>
+                <Typography variant="h3" sx={{ marginBottom: 3 }}>
                     Main technologies here are TypeScript, React, Next.js, Node.js, MongoDB, Material-UI, and using Vercel for deployment.
                 </Typography>
                 <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, marginBottom: 8 }}>
                     <Button variant="contained" color="primary" endIcon={<GitHubIcon />} href='https://github.com/FrankieDuck/wine-cellar' target='_blank'>
                         View Code
                     </Button>
-                    <Button variant="contained" color="secondary" endIcon={<WineBarIcon />}>
+                    <Button variant="contained" color="secondary" endIcon={<WineBarIcon />} href='https://wine-cellar-two.vercel.app/' target='_blank'>
                         Live App
                     </Button>
                 </Box>
